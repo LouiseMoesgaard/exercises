@@ -21,13 +21,32 @@
 
 // console.log(firstName, middleName, lastname);
 
-const fullName = "Louise Moesgaard Nielsen";
-getNameParts(fullName);
+// const fullName = "Louise Moesgaard Nielsen";
+// getNameParts(fullName);
 
-function getNameParts(fullName){
-    let firstName = fullName.substring(0, fullName.indexOf(" "));
-    let middleName = fullName.substring(firstName.length + 1,fullName.lastIndexOf(" "));
-    let lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
+// function getNameParts(fullName){
+//     let firstName = fullName.substring(0, fullName.indexOf(" "));
+//     let middleName = fullName.substring(firstName.length + 1,fullName.lastIndexOf(" "));
+//     let lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
 
-    console.log({firstName, middleName, lastName});
+//     console.log({firstName, middleName, lastName});
+// }
+
+fullName("Potter", "Harry");
+
+function fullName(lastName, firstName, middleName) {
+
+    const fullName = firstName + " " + middleName + " " + lastName;
+
+    let newName;
+
+    if(middleName === undefined){
+        newName = `${firstName} ${lastName}`
+    } else {
+        newName = `${firstName} ${middleName} ${lastName}`
+    }
+
+    console.log(newName);
+
+
 }
