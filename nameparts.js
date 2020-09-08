@@ -21,6 +21,7 @@
 
 // console.log(firstName, middleName, lastname);
 
+
 // const fullName = "Louise Moesgaard Nielsen";
 // getNameParts(fullName);
 
@@ -31,6 +32,8 @@
 
 //     console.log({firstName, middleName, lastName});
 // }
+
+
 
 // fullName("Potter", "Harry");
 
@@ -49,22 +52,44 @@
 //     console.log(newName);
 // }
 
-let newName = fullName("Potter", "Harry");
-console.log(newName);
-
-function fullName(lastName, firstName, middleName) {
-
-    const fullName = firstName + " " + middleName + " " + lastName;
-
-    let newName;
-
-    if(middleName === undefined){
-        newName = `${firstName} ${lastName}`
-    } else {
-        newName = `${firstName} ${middleName} ${lastName}`
-    }
-
-    return newName;
 
 
+// let newName = fullName("Potter", "Harry", "søren");
+// console.log(newName);
+
+// function fullName(lastName, firstName, middleName) {
+
+//     // const fullName = firstName + " " + middleName + " " + lastName;
+
+// //     let newName;
+
+// //     if(middleName === undefined){
+// //         newName = `${firstName} ${lastName}`
+// //     } else {
+// //         newName = `${firstName} ${middleName} ${lastName}`
+// //     }
+
+// //     return newName;
+// // }
+
+
+
+function capitalize(str) {
+const firstLetter = str.substring(0, 1);
+const rest = str.substring(1, str.length);
+const lowerUpper = firstLetter.toUpperCase() + rest.toLowerCase();  
+return lowerUpper;  
 }
+
+function getNameParts(fullName){
+    let firstName = capitalize(fullName.substring(0, fullName.indexOf(" ")));
+    let middleName = capitalize(fullName.substring(firstName.length + 1,fullName.lastIndexOf(" ")));
+    let lastName = capitalize(fullName.substring(fullName.lastIndexOf(" ") + 1));
+
+    return {firstName, middleName, lastName};
+}
+
+const fullName = "louise moesgaard nielsen";
+let name = getNameParts(fullName);
+
+console.log(name);
