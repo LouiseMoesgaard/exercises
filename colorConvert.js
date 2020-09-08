@@ -44,11 +44,5 @@ function cssToRGB(rgb) {
     let g = parseInt(colorarray[1].trim());
     let b = parseInt(colorarray[2].trim());
 
-
     console.log(r, g, b);
-
-    
-
-    
-
 }

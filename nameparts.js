@@ -32,7 +32,25 @@
 //     console.log({firstName, middleName, lastName});
 // }
 
-fullName("Potter", "Harry");
+// fullName("Potter", "Harry");
+
+// function fullName(lastName, firstName, middleName) {
+
+//     const fullName = firstName + " " + middleName + " " + lastName;
+
+//     let newName;
+
+//     if(middleName === undefined){
+//         newName = `${firstName} ${lastName}`
+//     } else {
+//         newName = `${firstName} ${middleName} ${lastName}`
+//     }
+
+//     console.log(newName);
+// }
+
+let newName = fullName("Potter", "Harry");
+console.log(newName);
 
 function fullName(lastName, firstName, middleName) {
 
@@ -46,7 +64,7 @@ function fullName(lastName, firstName, middleName) {
         newName = `${firstName} ${middleName} ${lastName}`
     }
 
-    console.log(newName);
+    return newName;
 
 
 }
