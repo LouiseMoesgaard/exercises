@@ -52,23 +52,45 @@
 // }
 
 
-let r = 9;
-let g = 0;
-let b = 37; 
+// let r = 9;
+// let g = 0;
+// let b = 37; 
 
-RGBtoHex(r, g, b);
+// RGBtoHex(r, g, b);
 
-function RGBtoHex(r, g, b) {
-    r = r.toString(16).padStart(2,"0");
-    g = g.toString(16).padStart(2,"0");
-    b = b.toString(16).padStart(2,"0");
+// function RGBtoHex(r, g, b) {
+//     r = r.toString(16).padStart(2,"0");
+//     g = g.toString(16).padStart(2,"0");
+//     b = b.toString(16).padStart(2,"0");
 
-    // if(r.length < 2 ){
-    //     r = "0" + r;
-    // }
+//     // if(r.length < 2 ){
+//     //     r = "0" + r;
+//     // }
 
-    const hex = "#" + r + g + b;
-    return hex;
+//     const hex = "#" + r + g + b;
+//     return hex;
+// }
+// console.log(RGBtoHex(r, g, b));
+
+
+
+
+const colorInput = "#bada55";
+
+convertColor(colorInput);
+
+function convertColor() {
+    let r = colorInput.substring(1, 3);
+    let g = colorInput.substring(3, 5);
+    let b = colorInput.substring(5, 7);
+
+    r = Number.parseInt(r, 16);
+    g = Number.parseInt(g, 16);
+    b = Number.parseInt(b, 16);
+
+    // const rgb = `${r} ${g} ${b}`;
+
+    return {r,g,b};
 }
 
-console.log(RGBtoHex(r, g, b));
+console.log(convertColor(colorInput));
